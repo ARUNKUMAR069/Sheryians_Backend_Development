@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Watching Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="p-4 bg-gray-800">
+        <h1 class="text-3xl font-bold">Video Watching Platform</h1>
+    </header>
+    <main class="p-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="video-container mb-8">
+                <video class="w-full fade-in" controls>
+                    <source src="https://sample-videos.com/video123/mp4/720" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <% for(let i = 0; i < 6; i++) { %>
+                    <div class="video-item bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition duration-300 ease-in-out">
+                        <a href="path/to/video<%= i + 1 %>.mp4"></a>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ718nztPNJfCbDJjZG8fOkejBnBAeQw5eAUA&s" alt="Video Thumbnail" class="w-full h-48 object-cover mb-2 rounded-lg">
+                            <h2 class="text-xl font-semibold">Video Title <%= i + 1 %></h2>
+                            <p class="text-gray-400">Video description goes here...</p>
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
