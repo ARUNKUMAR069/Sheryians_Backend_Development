@@ -6,6 +6,10 @@ app.set("view engine","ejs")
 app.get('/',(req,res)=>{
     res.render('templateengine')
 })
+app.get('/home',(req,res)=>{
+    res.send('Welcome to home page')
+})
+
 
 
 app.listen(3000,()=>{
