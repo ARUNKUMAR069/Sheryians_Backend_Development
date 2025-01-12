@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Web Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <header class="bg-blue-600 text-white p-4">
+    <h1 class="text-3xl">Welcome to My E-commerce Website</h1>
+  </header>
+  <nav class="bg-gray-200 p-4">
+    <ul class="flex space-x-4">
+      <li><a href="#" class="text-blue-600">Home</a></li>
+      <li><a href="#" class="text-blue-600">About</a></li>
+      <li><a href="#" class="text-blue-600">Products</a></li>
+      <li><a href="#" class="text-blue-600">Contact</a></li>
+    </ul>
+  </nav>
+  <main class="p-4">
+    <section class="mb-8">
+      <h2 class="text-2xl mb-4">Featured Produts</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <% for(let i = 0; i < 6; i++) { %>
+          <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out fade-in">
+            <img src="" alt="Product Image" class="w-full h-48 object-cover mb-2 rounded-lg">
+            <h3 class="text-xl font-semibold">Product <%= i + 1 %></h3>
+            <p class="text-gray-600">This is a description of product <%= i + 1 %>. It's a great product that you will love.</p>
+            <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300 ease-in-out">Buy Now</button>
+          </div>
+        <% } %>
+      </div>
+    </section>
+    <section class="mb-8">
+      <h2 class="text-2xl mb-4">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out fade-in">
+          <h3 class="text-xl font-semibold">Service 1</h3>
+          <p class="text-gray-600">Description of service 1. We offer the best service in the industry.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out fade-in">
+          <h3 class="text-xl font-semibold">Service 2</h3>
+          <p class="text-gray-600">Description of service 2. Our services are top-notch and reliable.</p>
+        </div>
+      </div>
+    </section>
+    <section class="mb-8">
+      <h2 class="text-2xl mb-4">Customer Testimonials</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <% for(let i = 0; i < 3; i++) { %>
+          <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out fade-in">
+            <p class="text-gray-600">"This is a testimonial from a satisfied customer. Product <%= i + 1 %> is amazing!"</p>
+            <p class="mt-2 text-right text-gray-500">- Customer <%= i + 1 %></p>
+          </div>
+        <% } %>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-gray-800 text-white p-4 text-center">
+    <p>&copy; 2023 My E-commerce Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>
