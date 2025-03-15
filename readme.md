@@ -1,7 +1,7 @@
 What is Backend?
 Ans: backend developer wo banda hai joi ki server and db program krta ha
 
-Why Backend?
+Why Backend?     
 Ans:  to make website more usable and purposefult for the audience
 
 
